@@ -7,15 +7,18 @@
     transform: translateX(-50%);
     width: 70%;
     max-width: 1200px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 0.8rem 2rem;
     display: flex;
     align-items: center;
     justify-content: center; /* Changed from space-between to center */
     z-index: 1000;
-    
+    transition: all 0.3s ease;
   }
   
   /* Logo Section */
@@ -31,10 +34,12 @@
     width: auto;
   }
   
-  .navbar__logo span {
-    font-size: 1.2rem;
+  .navbar__logo .span {
+    font-size: 1.3rem;
     font-weight: 600;
     color: #000000;
+    text-decoration: none;
+    font-weight: 700;
   }
   
   /* Navigation Links */
@@ -96,14 +101,19 @@
     padding: 0.4rem 1rem;
     border: none;
     border-radius: 25px;
-    background-color: #f1f1f1;
+    background-color: rgba(255, 255, 255, 0.25);
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
   
   .signup-btn:hover {
-    background-color: #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   }
   
   /* Hamburger Menu */
@@ -142,6 +152,7 @@
       flex-direction: column;
       align-items: center; /* Changed from flex-start to center */
       justify-content: center;
+      background-color: rgba(255, 255, 255, 0.2);
     }
   
     .navbar__logo {

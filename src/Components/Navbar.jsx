@@ -56,7 +56,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar__logo">
-        <span>My Portfolio</span>
+      <Link to="/" className="span">My Portofilo</Link>
       </div>
 
       <div className="navbar__cta">
