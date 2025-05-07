@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import "../Css/Contact.css";
@@ -13,9 +13,7 @@ function Contact() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
 
-  const handleChange = (e) =>{
-
-
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -25,12 +23,13 @@ function Contact() {
     setIsSubmitting(true);
     setSubmitError(false);
 
-    emailjs.sendForm(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      e.target,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-    )
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        e.target,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      )
       .then(() => {
         setIsSubmitting(false);
         setSubmitSuccess(true);
@@ -43,6 +42,10 @@ function Contact() {
         setTimeout(() => setSubmitError(false), 3000);
       });
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -185,7 +188,8 @@ function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                <span className="success-icon">✅</span> Thank you for reaching out! I’ll be in touch soon.
+                <span className="success-icon">✅</span> Thank you for reaching
+                out! I’ll be in touch soon.
               </motion.div>
             )}
 
@@ -196,7 +200,8 @@ function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                <span className="error-icon">❌</span> Failed to send message. Please try again.
+                <span className="error-icon">❌</span> Failed to send message.
+                Please try again.
               </motion.div>
             )}
           </motion.form>
