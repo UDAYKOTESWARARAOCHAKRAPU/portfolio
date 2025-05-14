@@ -257,7 +257,8 @@
 
 @media (max-width: 480px) {
   .contact-container {
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
+    width: 89%;
   }
 
   .contact-title {
@@ -265,7 +266,8 @@
   }
 
   .contact-form {
-    padding: 1rem;
+    border: solid;
+    width: 90%;;
   }
 
   .contact-item {
@@ -284,6 +286,7 @@
   .form-group textarea {
     padding: 0.7rem;
     font-size: 0.95rem;
+    width: 90%;
   }
 
   .submit-btn {

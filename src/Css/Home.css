@@ -3,10 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    width: 100%;
+    /* min-height: 100vh; */
+    /* width: 100%; */
     padding: 0 20px;
     margin-top: 70px;
+    /* border: solid; */
   }
   
   /* Glass Effect Card */
@@ -198,7 +199,7 @@
   
   @media (max-width: 480px) {
     .home-card {
-      padding: 20px;
+      padding: 10px;
     }
   
     .home-title {
