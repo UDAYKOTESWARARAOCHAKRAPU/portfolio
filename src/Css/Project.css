@@ -30,6 +30,44 @@
   margin-right: 0.5rem;
 }
 
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(224, 247, 250, 0.3);
+  color: #1e3a8a;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-button.active {
+  background: linear-gradient(to right, #3b82f6, #93c5fd);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #fff;
+  border: 1px solid rgba(59, 130, 246, 0.7);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.filter-button:hover:not(.active) {
+  background: rgba(224, 247, 250, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
 /* Project Grid */
 .project-grid {
   display: grid;
@@ -84,7 +122,7 @@
 }
 
 /* Project Description */
-.project-card p {
+.project-description {
   color: #1f2937;
   font-size: 0.95rem;
   margin-bottom: 1rem;
@@ -164,7 +202,7 @@
     font-size: 1.3rem;
   }
 
-  .project-card p {
+  .project-description {
     font-size: 0.9rem;
   }
 
@@ -174,6 +212,15 @@
 
   .project-image {
     aspect-ratio: 3/2;
+  }
+
+  .filter-buttons {
+    gap: 0.8rem;
+  }
+
+  .filter-button {
+    padding: 0.4rem 1rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -202,7 +249,7 @@
     font-size: 1.2rem;
   }
 
-  .project-card p {
+  .project-description {
     font-size: 0.85rem;
   }
 
@@ -212,6 +259,16 @@
 
   .view-link {
     padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .filter-button {
+    padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
   }
 }
@@ -237,7 +294,7 @@
     font-size: 1.1rem;
   }
 
-  .project-card p {
+  .project-description {
     font-size: 0.8rem;
   }
 
@@ -253,5 +310,14 @@
 
   .project-image {
     aspect-ratio: 3/2;
+  }
+
+  .filter-buttons {
+    gap: 0.4rem;
+  }
+
+  .filter-button {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.85rem;
   }
 }
